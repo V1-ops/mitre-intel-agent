@@ -166,9 +166,6 @@ $RECYCLE.BIN/
 .env.local
 .env.*.local
 
-# Vector store folder (rebuilt at startup from source data)
-vector_store/
-
 # HuggingFace cache
 .cache/
 huggingface/

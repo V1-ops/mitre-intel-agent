@@ -1,0 +1,24 @@
+# ============================================
+# DEVELOPMENT REQUIREMENTS
+# For Building the FAISS Vector Store Locally
+# ============================================
+# Use this to run: python build_index.py
+
+# Core
+python-dotenv
+
+# LangChain + HuggingFace
+langchain
+langchain-community
+langchain-huggingface
+huggingface-hub
+
+# Embeddings (local model - REQUIRED for build_index.py)
+sentence-transformers
+
+# PyTorch (CPU version to keep it lightweight)
+torch
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+# Vector Store
+faiss-cpu
