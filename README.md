@@ -48,7 +48,7 @@ This system combines modern AI/ML techniques with cybersecurity threat intellige
          │
          ▼
 ┌─────────────────────────────────────────────────────────┐
-│              Prompt Construction                         │
+│              Prompt Construction                        │
 │  Log + Top 3 Techniques → Structured Prompt             │
 └────────┬────────────────────────────────────────────────┘
          │
@@ -61,7 +61,7 @@ This system combines modern AI/ML techniques with cybersecurity threat intellige
          │
          ▼
 ┌─────────────────────────────────────────────────────────┐
-│          Post-Processing & Enrichment                    │
+│    Post-Processing & Enrichment                    │
 │  • Severity Classification (Rule-based)                 │
 │  • Confidence Calibration                                │
 │  • Mitigation Strategy Retrieval                         │

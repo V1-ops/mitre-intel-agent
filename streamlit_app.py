@@ -139,15 +139,18 @@ def classify_severity(technique_name, technique_id):
         return "Medium"
 
 def calibrate_confidence(similarity_score, llm_confidence):
-    """Calibrate confidence using similarity score and LLM output"""
+    """Calibrate confidence using similarity score and LLM output - Improved thresholds"""
     llm_conf_cap = llm_confidence.capitalize()
     
-    if similarity_score > 0.85 and llm_conf_cap == "High":
-        return "High"
-    elif similarity_score >= 0.70:
-        return "Medium"
+    # More lenient thresholds to give "Medium" to "Good" confidence
+    if similarity_score > 0.80 and llm_conf_cap == "High":
+        return "High"  # Very confident match
+    elif similarity_score >= 0.65 or llm_conf_cap == "Medium":
+        return "Medium"  # Good confidence - more lenient
+    elif similarity_score >= 0.50 and llm_conf_cap == "High":
+        return "Medium"  # Trust LLM if it says "High" even with medium similarity
     else:
-        return "Low"
+        return "Low"  # Only truly low confidence if both signals are weak
 
 def analyze_log(log_text, vector_store, llm, prompt_template):
     """Main analysis function"""
@@ -332,12 +335,11 @@ if analyze_button:
                     # Technique ID and Name
                     st.subheader(f"{result['technique_id']}: {result['technique_name']}")
                     
-                    # Metrics for Severity, Confidence, and Similarity
-                    m_col1, m_col2, m_col3 = st.columns(3)
+                    # Metrics for Severity and Confidence
+                    m_col1, m_col2 = st.columns(2)
                     
                     m_col1.metric("Severity", result['severity'])
                     m_col2.metric("Confidence", result['confidence'])
-                    m_col3.metric("Similarity Score", f"{result['similarity_score']:.2f}")
                     
                     st.divider()
                     
