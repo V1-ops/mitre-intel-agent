@@ -6,6 +6,11 @@ This system combines modern AI/ML techniques with cybersecurity threat intellige
 
 ---
 
+🚀 **Live App:**  
+https://mitre-intel-agent-c5adaknlmmu9xdck7hdg73.streamlit.app
+
+---
+
 ## 🎯 Features
 
 - **🤖 AI-Powered Analysis**: Uses large language models (LLMs) for intelligent threat classification
@@ -1435,7 +1440,7 @@ Contributions are welcome! Here's how to contribute:
 
 **MIT License**
 
-Copyright (c) 2026 [Your Name]
+Copyright (c) 2026 [Vanshdeep Singh Lamba ]
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
@@ -1445,20 +1450,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 ---
 
-## 📧 Support & Contact
 
-### Getting Help
-1. **Documentation**: Read this README thoroughly
-2. **Issues**: Search/open GitHub issues
-3. **Community**: Join discussions in GitHub Discussions tab
-
-### Professional Support
-For enterprise support, custom development, or consulting:
-- Email: [your-email@example.com]
-- LinkedIn: [Your Profile]
-- Website: [your-website.com]
-
----
 
 ## 🙏 Acknowledgments
 
@@ -1479,7 +1471,7 @@ Special thanks to the cybersecurity and AI/ML communities for sharing knowledge 
 ## 📈 Project Stats & Milestones
 
 - **Version**: 1.0.0
-- **Release Date**: February 2026
+- **Release Date**: 12th February 2026
 - **MITRE Techniques**: 200+
 - **Supported Platforms**: Windows, Linux, macOS, Android, iOS, Network
 - **Languages**: Python
@@ -1489,27 +1481,6 @@ Special thanks to the cybersecurity and AI/ML communities for sharing knowledge 
 
 ---
 
-## 🗺️ Roadmap
-
-### Version 1.1 (Q2 2026)
-- [ ] Batch log processing
-- [ ] Export results to CSV/JSON
-- [ ] Historical analysis dashboard
-- [ ] Custom technique database support
-
-### Version 1.2 (Q3 2026)
-- [ ] REST API endpoint (FastAPI)
-- [ ] SIEM integrations (Splunk, Elastic)
-- [ ] Multi-language log support
-- [ ] Real-time log streaming
-
-### Version 2.0 (Q4 2026)
-- [ ] Fine-tuned model for cybersecurity
-- [ ] Automated mitigation suggestions
-- [ ] Integration with threat intelligence feeds
-- [ ] On-premises deployment option
-
----
 
 <div align="center">
 
