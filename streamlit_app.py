@@ -139,18 +139,20 @@ def classify_severity(technique_name, technique_id):
         return "Medium"
 
 def calibrate_confidence(similarity_score, llm_confidence):
-    """Calibrate confidence using similarity score and LLM output - Improved thresholds"""
+    """Calibrate confidence using similarity score and LLM output - Very lenient for Medium"""
     llm_conf_cap = llm_confidence.capitalize()
     
-    # More lenient thresholds to give "Medium" to "Good" confidence
+    # Aggressive Medium confidence to improve UX
     if similarity_score > 0.80 and llm_conf_cap == "High":
         return "High"  # Very confident match
-    elif similarity_score >= 0.65 or llm_conf_cap == "Medium":
-        return "Medium"  # Good confidence - more lenient
-    elif similarity_score >= 0.50 and llm_conf_cap == "High":
-        return "Medium"  # Trust LLM if it says "High" even with medium similarity
+    elif similarity_score >= 0.55:  # Lower threshold for Medium
+        return "Medium"  # Good confidence on decent similarity
+    elif llm_conf_cap in ["Medium", "High"]:  # Trust LLM for any positive signal
+        return "Medium"  # If LLM is confident, boost to Medium
+    elif similarity_score >= 0.40:  # Even weak similarity gets Medium
+        return "Medium"
     else:
-        return "Low"  # Only truly low confidence if both signals are weak
+        return "Low"  # Only truly low if everything is weak
 
 def analyze_log(log_text, vector_store, llm, prompt_template):
     """Main analysis function"""
