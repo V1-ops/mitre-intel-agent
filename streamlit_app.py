@@ -236,7 +236,7 @@ def analyze_log(log_text, vector_store, llm, prompt_template):
             if doc.metadata.get("technique_id") == result["technique_id"]:
                 mitigations_list = doc.metadata.get("mitigations", [])
                 if mitigations_list:
-                    mitigation = mitigations_list[0][:500] + "..."
+                    mitigation = mitigations_list[0][:2000]  # Increased from 500 to 2000 chars
                 break
 
         # --------------------------------------------
